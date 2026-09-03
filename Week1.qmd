@@ -16,7 +16,7 @@ Because the complete NEI 2020 dataset is too large for my computer to work with,
 I imported the CSV file into R for future manipulation and analysis:
 
 ```{r}
-NEIdata <- read.csv("~/Documents/R/Data607/Week 1/NEI-2020.csv", stringsAsFactors=TRUE)
+NEIdata <- read.csv("https://raw.githubusercontent.com/chobowen/DATA-607/refs/heads/main/NEI-2020.csv?token=GHSAT0AAAAAAEH4C3XVPHAODIZJKXYKQSIK2U2BCJA", stringsAsFactors=TRUE)
 ```
 
 ## Objective
