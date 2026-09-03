@@ -16,9 +16,7 @@ Because the complete NEI 2020 dataset is too large for my computer to work with,
 I then imported the Excel file into R for future manipulation and analysis:
 
 ```{r}
-library(tidyverse)
-library(readxl)
-data1 <- read_excel("~/Documents/R/Data607/Week 1/bd714cf8-f465-46ae-b4ae-67c367939dc4.xlsx")
+NEIdata <- read.csv("~/Documents/R/Data607/Week 1/NEI-2020.csv", stringsAsFactors=TRUE)
 ```
 
 ## Objective

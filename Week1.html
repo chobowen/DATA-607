@@ -122,21 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Because the complete NEI 2020 dataset is too large for my computer to work with, I subseted the data using the EPA’s <a href="https://awsedap.epa.gov/public/single/?appid=20230c40-026d-494e-903f-3f112761a208&amp;sheet=5d3fdda7-14bc-4284-a9bb-cfd856b9348d&amp;opt=ctxmenu,currsel">Online 2020 NEI Data Retrieval Tool</a>. For Data Category, I selected “Non-Road Vehicles;” for EI Sector, I selected “Mobile Non-Road Equipment (Gasoline);” for State, I selected “New York,” and for Source Classification Code I selected “Lawn and Garden Equipment.” I may need to do further subseting of the data depending on the specific analyses I want to do, in which case I will do that further subseting in R.</p>
 <p>I then imported the Excel file into R for future manipulation and analysis:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.2.1     ✔ readr     2.2.0
-✔ forcats   1.0.1     ✔ stringr   1.6.0
-✔ ggplot2   4.0.3     ✔ tibble    3.3.1
-✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-✔ purrr     1.2.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/Documents/R/Data607/Week 1/bd714cf8-f465-46ae-b4ae-67c367939dc4.xlsx"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>NEIdata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Documents/R/Data607/Week 1/NEI-2020.csv"</span>, <span class="at">stringsAsFactors=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="objective" class="level2">
