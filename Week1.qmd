@@ -11,9 +11,9 @@ editor: visual
 
 In 2023, U.S. PIRG released a report, [***Lawn Care Goes Electric***](https://pirg.us8.list-manage.com/track/click?u=27a171223079ff59302c5b694&id=24b69c43e1&e=31e15bc3c7), and [ranked](https://pirg.org/edfund/resources/lawn-care-goes-electric/) U.S. states and counties by the amount of greenhouse gases and other pollutants emitted from gas-powered lawn equipment. Suffolk County, where I live, ranked highest for CO~2~ emissions in New York state, not surprisingly (this is "Lawn Island," after all). As a resident of New York state, an environmental advocate, and an anti-leaf blower activist, I am curious to take a closer look at the data used in the report, which comes from the U.S. Environmental Protection Agency's (EPA) 2020 [National Emissions Inventory](https://www.epa.gov/air-emissions-inventories/2020-national-emissions-inventory-nei-data) (NEI).
 
-Because the complete NEI 2020 dataset is too large for my computer to work with, I subseted the data using the EPA's [Online 2020 NEI Data Retrieval Tool](https://awsedap.epa.gov/public/single/?appid=20230c40-026d-494e-903f-3f112761a208&sheet=5d3fdda7-14bc-4284-a9bb-cfd856b9348d&opt=ctxmenu,currsel). For Data Category, I selected "Non-Road Vehicles;" for EI Sector, I selected "Mobile Non-Road Equipment (Gasoline);" for State, I selected "New York," and for Source Classification Code I selected "Lawn and Garden Equipment." I may need to do further subseting of the data depending on the specific analyses I want to do, in which case I will do that further subseting in R.
+Because the complete NEI 2020 dataset is too large for my computer to work with, I subsetted the data using the EPA's [Online 2020 NEI Data Retrieval Tool](https://awsedap.epa.gov/public/single/?appid=20230c40-026d-494e-903f-3f112761a208&sheet=5d3fdda7-14bc-4284-a9bb-cfd856b9348d&opt=ctxmenu,currsel). For Data Category, I selected "Non-Road Vehicles;" for EI Sector, I selected "Mobile Non-Road Equipment (Gasoline);" for State, I selected "New York," and for Source Classification Code I selected "Lawn and Garden Equipment." I may need to do further subsetting of the data depending on the specific analyses I want to do, in which case I will do that further subsetting in R.
 
-I then imported the Excel file into R for future manipulation and analysis:
+I imported the CSV file into R for future manipulation and analysis:
 
 ```{r}
 NEIdata <- read.csv("~/Documents/R/Data607/Week 1/NEI-2020.csv", stringsAsFactors=TRUE)
@@ -21,7 +21,9 @@ NEIdata <- read.csv("~/Documents/R/Data607/Week 1/NEI-2020.csv", stringsAsFactor
 
 ## Objective
 
-My goal for this project is simply to see if I can reproduce the county level data for New York state. Replicability is a vital part of the scientific process, although often considered the least "glamorous." However, with so much data fraud being exposed in science these days, replication should be given much greater attention. (Note: I don't doubt the results of NY PIRG's analyses. I am simply interested in this data and feel that working with this data would be a doable challenge for this project.) I think the greatest challenge that I might come up against is actually retrieving the data on the EPA website and then sifting through such an enormous dataset to find the particular subset of data that I need. Given that NY PIRG published their methods, it should be doable.
+My goal for this project is simply to see if I can reproduce the county level emissions data for New York state. Replicability is a vital part of the scientific process, although it is often considered the least "glamorous." However, with so much [data fraud](https://datacolada.org/) being exposed in science these days, replication should be given much greater attention. (Note: I don't doubt the results of PIRG's analyses, I am simply interested in this topic. Working with the data should be a doable challenge given that PIRG published their methods in their report. My project will demonstrate why replicability is important and how good documentation and methodological transparency facilitate replication in science.
+
+Raw Data URL: <https://raw.githubusercontent.com/chobowen/DATA-607/refs/heads/main/NEI-2020.csv?token=GHSAT0AAAAAAEH3LUACVHHF2RWFCA6RO4742UZXXLA>
 
 Data source:
 
